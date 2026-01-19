@@ -20,6 +20,11 @@ defmodule LivecounterWeb.Router do
     get "/", PageController, :home
   end
 
+  scope "/api", LivecounterWeb do
+    pipe_through :api
+
+    get "/counter", CounterController, :show
+  end
   # Other scopes may use custom stacks.
   # scope "/api", LivecounterWeb do
   #   pipe_through :api

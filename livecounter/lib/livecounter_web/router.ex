@@ -24,6 +24,8 @@ defmodule LivecounterWeb.Router do
     pipe_through :api
 
     get "/counter", CounterController, :show
+    post "/counter/increment", CounterController, :increment
+    post "/counter/decrement", CounterController, :decrement
   end
   # Other scopes may use custom stacks.
   # scope "/api", LivecounterWeb do
